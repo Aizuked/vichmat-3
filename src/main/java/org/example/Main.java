@@ -29,9 +29,8 @@ public class Main {
         fValue.addFirst(Math.sqrt(cache.getLast()) - Math.log(cache.getLast() + 4) / cache.getLast() - 1.5);
         deltaX.addFirst(0d);
 
-        cache.addLast(cache.getLast() -
-                (fValue.getLast() * h) /
-                        (Math.sqrt(cache.getLast() + h) - Math.log(cache.getLast() + h + 4) - 1.5 - fValue.getLast()));
+        cache.addLast(cache.getLast() - ((fValue.getLast() * h) /
+                        (Math.sqrt(cache.getLast() + h) - Math.log(cache.getLast() + h + 4) / (cache.getLast() + h) - 1.5 - fValue.getLast())));
         fValue.addLast(Math.sqrt(cache.getLast()) - Math.log(cache.getLast() + 4) / cache.getLast() - 1.5);
         deltaX.addLast(Math.abs(cache.getLast() - cache.get(cache.indexOf(cache.getLast()) - 1)));
 
